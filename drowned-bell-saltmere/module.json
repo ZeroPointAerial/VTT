@@ -142,6 +142,6 @@
   ],
   "url": "https://github.com/ZeroPointAerial/VTT",
   "manifest": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/drowned-bell-saltmere/module.json",
-  "download": "https://github.com/ZeroPointAerial/VTT/releases/download/drowned-bell-saltmere-v1.0.0/drowned-bell-saltmere-v1.0.0.zip",
+  "download": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/releases/drowned-bell-saltmere-v1.0.0.zip",
   "flags": {}
 }
