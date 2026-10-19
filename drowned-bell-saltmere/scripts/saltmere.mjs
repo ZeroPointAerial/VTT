@@ -54,9 +54,50 @@ Hooks.once("init", () => {
   });
 });
 
-Hooks.once("ready", () => {
+/* -------------------------------------------- */
+/*  Foundry v14 Scene Levels                    */
+/* -------------------------------------------- */
+
+/**
+ * In v14 the map image belongs to each Scene Level (level.background.src), not the scene.
+ * Our scene data sets the scene-wide background (v12/v13 format), so copy it onto the Level(s),
+ * creating one if needed. No-op on v13 and earlier, and on scenes from other packages.
+ */
+async function ensureLevelBackground(scene) {
+  try {
+    const src = scene._source.background?.src;
+    if ( !src?.startsWith(`${ROOT}/`) ) return;
+    if ( !scene.levels ) return;
+    const levels = Array.from(scene.levels);
+    if ( !levels.length ) {
+      await scene.createEmbeddedDocuments("Level", [{ name: "Main", background: { src } }]);
+      return;
+    }
+    const updates = levels.filter(l => !(l._source?.background?.src ?? l.background?.src))
+      .map(l => ({ _id: l.id, "background.src": src }));
+    if ( updates.length ) await scene.updateEmbeddedDocuments("Level", updates);
+  } catch(err) {
+    console.warn(`${MOD} | Could not set the Level background for scene "${scene.name}"`, err);
+  }
+}
+
+Hooks.on("createScene", (scene, options, userId) => {
+  if ( userId === game.user.id ) ensureLevelBackground(scene);
+});
+
+Hooks.once("ready", async () => {
   game.modules.get(MOD).api = API;
   game.socket.on(`module.${MOD}`, onSocket);
+  if ( amPrimaryGM() ) {
+    let fixed = false;
+    for ( const scene of game.scenes ) {
+      const before = scene.levels ? Array.from(scene.levels).map(l => l._source?.background?.src).join() : null;
+      await ensureLevelBackground(scene);
+      const after = scene.levels ? Array.from(scene.levels).map(l => l._source?.background?.src).join() : null;
+      if ( before !== after ) fixed = true;
+    }
+    if ( fixed && canvas?.scene ) canvas.draw();
+  }
   Tracker.render();
 });
 Hooks.on("canvasReady", () => Tracker.render());
@@ -321,4 +362,4 @@ function toggleTracker() {
   return game.settings.set(MOD, "trackerMode", Tracker.el ? "hide" : "show");
 }
 
-const API = { toll, addTrueToll, ringTrue, spendTide, setTide, tideDialog, revealAnselm, resetNight, toggleTracker, playSound, SOUNDS };
+const API = { ensureLevelBackground, repairLevels: async () => { for ( const s of game.scenes ) await ensureLevelBackground(s); return canvas?.scene ? canvas.draw() : null; }, toll, addTrueToll, ringTrue, spendTide, setTide, tideDialog, revealAnselm, resetNight, toggleTracker, playSound, SOUNDS };
