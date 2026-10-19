@@ -1,0 +1,147 @@
+{
+  "id": "drowned-bell-saltmere",
+  "title": "The Drowned Bell of Saltmere",
+  "description": "<p>A D&amp;D 5e (2014 rules) one-shot for four to five level 5 characters. Coastal folk horror, mystery and a moral choice: a drowned bell rings beneath the waves at every low tide, and each time it does, someone walks into the sea smiling.</p><p>Four scenes with walls, lights, sound and map pins; all NPCs and monsters; handouts; roll tables; playlists; and the Saltmere Tracker for the Tide Track and the bell's True Tolls.</p>",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Todd",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "5.0.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/saltmere.mjs"
+  ],
+  "styles": [
+    "styles/saltmere.css"
+  ],
+  "socket": true,
+  "packs": [
+    {
+      "name": "saltmere-adventure",
+      "label": "The Drowned Bell of Saltmere (Adventure)",
+      "path": "packs/saltmere-adventure",
+      "type": "Adventure",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-scenes",
+      "label": "Saltmere: Scenes",
+      "path": "packs/saltmere-scenes",
+      "type": "Scene",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-actors",
+      "label": "Saltmere: Actors",
+      "path": "packs/saltmere-actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-items",
+      "label": "Saltmere: Items",
+      "path": "packs/saltmere-items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-journals",
+      "label": "Saltmere: Journals",
+      "path": "packs/saltmere-journals",
+      "type": "JournalEntry",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-tables",
+      "label": "Saltmere: Roll Tables",
+      "path": "packs/saltmere-tables",
+      "type": "RollTable",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "saltmere-macros",
+      "label": "Saltmere: Macros",
+      "path": "packs/saltmere-macros",
+      "type": "Macro",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "The Drowned Bell of Saltmere",
+      "sorting": "m",
+      "color": "#1f3a35",
+      "packs": [
+        "saltmere-adventure",
+        "saltmere-scenes",
+        "saltmere-actors",
+        "saltmere-items",
+        "saltmere-journals",
+        "saltmere-tables",
+        "saltmere-macros"
+      ],
+      "folders": []
+    }
+  ],
+  "media": [
+    {
+      "type": "cover",
+      "url": "modules/drowned-bell-saltmere/assets/art/cover.webp"
+    }
+  ],
+  "url": "https://github.com/ZeroPointAerial/VTT",
+  "manifest": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/drowned-bell-saltmere/module.json",
+  "download": "https://github.com/ZeroPointAerial/VTT/releases/download/drowned-bell-saltmere-v1.0.0/drowned-bell-saltmere-v1.0.0.zip",
+  "flags": {}
+}

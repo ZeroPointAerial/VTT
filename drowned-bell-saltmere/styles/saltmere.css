@@ -1,0 +1,48 @@
+/* ---------- Tracker panel ---------- */
+#saltmere-tracker {
+  position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 70;
+  min-width: 380px; padding: 6px 10px 8px; border-radius: 8px;
+  background: linear-gradient(180deg, rgba(14, 30, 34, 0.94), rgba(6, 14, 18, 0.94));
+  border: 1px solid #4f8f7a; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), inset 0 0 18px rgba(79, 143, 122, 0.15);
+  color: #dfe9e4; font-family: "Signika", sans-serif; font-size: 13px; pointer-events: auto;
+}
+#saltmere-tracker header { font-family: "Modesto Condensed", serif; font-size: 17px; letter-spacing: 0.04em; color: #c9b98d; text-align: center; margin-bottom: 4px; }
+#saltmere-tracker header .bell { display: inline-block; width: 12px; height: 12px; margin-right: 4px; border-radius: 50% 50% 20% 20%; background: #c9a24a; vertical-align: -1px; }
+#saltmere-tracker .row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+#saltmere-tracker .row label { width: 72px; color: #9fc2b5; font-weight: bold; }
+#saltmere-tracker .pips { display: flex; gap: 3px; flex: 1; }
+#saltmere-tracker .pip { width: 14px; height: 14px; border-radius: 50%; border: 1px solid #3d5c58; background: #0a1a1e; }
+#saltmere-tracker .pip.tide.on { background: radial-gradient(circle at 35% 35%, #9fe0f0, #2a7a8e); border-color: #6fc0d0; }
+#saltmere-tracker .pip.toll.on { background: radial-gradient(circle at 35% 35%, #fff2b0, #c9a24a); border-color: #ffd97a; box-shadow: 0 0 8px #ffcc55; }
+#saltmere-tracker .pip.saved.on { background: radial-gradient(circle at 35% 35%, #ffe2c0, #b0703a); border-color: #e0a060; }
+#saltmere-tracker .val { width: 92px; text-align: right; }
+#saltmere-tracker .val em { color: #ff9b7a; font-style: normal; font-size: 11px; }
+#saltmere-tracker button { width: 22px; height: 20px; line-height: 16px; padding: 0; font-size: 12px; background: #183238; color: #dfe9e4; border: 1px solid #4f8f7a; }
+#saltmere-tracker footer { display: flex; gap: 6px; justify-content: center; margin-top: 5px; }
+#saltmere-tracker footer button { width: auto; padding: 0 10px; }
+
+/* ---------- Chat cards ---------- */
+.saltmere-chat h3 { font-family: "Modesto Condensed", serif; color: #2a5a50; border-bottom: 1px solid #4f8f7a; margin: 0 0 4px; }
+.saltmere-success { color: #2e7d32; font-weight: bold; }
+.saltmere-fail { color: #8e2b20; font-weight: bold; }
+
+/* ---------- Journal styling ---------- */
+.journal-entry-page .saltmere-boxed, .saltmere-boxed {
+  background: #f1ead6; border-left: 4px solid #2a5a50; border-radius: 3px;
+  padding: 0.6em 1em; margin: 0.8em 0; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: "IM Fell English", Georgia, serif; font-style: italic; color: #2b2118;
+}
+.saltmere-sidebar {
+  background: #e3ece8; border: 1px solid #4f8f7a; border-radius: 4px; padding: 0.4em 0.9em; margin: 0.8em 0;
+}
+.saltmere-sidebar h4 { margin: 0.2em 0; color: #1f3a35; border: none; }
+.saltmere-gm {
+  background: #f6e9e2; border: 1px dashed #8e2b20; border-radius: 4px; padding: 0.3em 0.9em; margin: 0.8em 0; color: #3a1a12;
+}
+.saltmere-lede { font-size: 1.08em; font-style: italic; color: #33403c; }
+.saltmere-banner { border: none; width: 100%; border-radius: 6px; }
+table.saltmere-table { border-collapse: collapse; width: 100%; margin: 0.6em 0; }
+table.saltmere-table th { background: #1f3a35; color: #f1ead6; text-align: left; padding: 3px 6px; }
+table.saltmere-table td { border-bottom: 1px solid #c9c0a8; padding: 3px 6px; vertical-align: top; }
+table.saltmere-table tr:nth-child(even) td { background: rgba(79, 143, 122, 0.07); }
+.saltmere-portrait { float: right; width: 180px; margin: 0 0 0.5em 1em; border: none; border-radius: 50%; }
