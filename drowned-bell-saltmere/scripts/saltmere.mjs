@@ -65,9 +65,11 @@ Hooks.once("init", () => {
  */
 async function ensureLevelBackground(scene) {
   try {
-    const src = scene._source.background?.src;
-    if ( !src?.startsWith(`${ROOT}/`) ) return;
     if ( !scene.levels ) return;
+    // v14 drops the scene-wide background field, so fall back to our thumbnail path (thumbs/x.webp -> maps/x.webp).
+    let src = scene._source.background?.src;
+    if ( !src && scene.thumb?.startsWith(`${ROOT}/assets/thumbs/`) ) src = scene.thumb.replace("/assets/thumbs/", "/assets/maps/");
+    if ( !src?.startsWith(`${ROOT}/`) ) return;
     const levels = Array.from(scene.levels);
     if ( !levels.length ) {
       await scene.createEmbeddedDocuments("Level", [{ name: "Main", background: { src } }]);
