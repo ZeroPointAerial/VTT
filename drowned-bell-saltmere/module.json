@@ -2,7 +2,7 @@
   "id": "drowned-bell-saltmere",
   "title": "The Drowned Bell of Saltmere",
   "description": "<p>A D&amp;D 5e (2014 rules) one-shot for four to five level 5 characters. Coastal folk horror, mystery and a moral choice: a drowned bell rings beneath the waves at every low tide, and each time it does, someone walks into the sea smiling.</p><p>Four scenes with walls, lights, sound and map pins; all NPCs and monsters; handouts; roll tables; playlists; and the Saltmere Tracker for the Tide Track and the bell's True Tolls.</p>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     {
       "name": "Todd",
@@ -142,6 +142,6 @@
   ],
   "url": "https://github.com/ZeroPointAerial/VTT",
   "manifest": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/drowned-bell-saltmere/module.json",
-  "download": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/releases/drowned-bell-saltmere-v1.0.1.zip",
+  "download": "https://raw.githubusercontent.com/ZeroPointAerial/VTT/main/releases/drowned-bell-saltmere-v1.0.2.zip",
   "flags": {}
 }
